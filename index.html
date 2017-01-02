@@ -4,19 +4,30 @@
 
 <head>
 <style>
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
 #canvas {
   margin-left: 18px;
   max-width: 730px;
 }
 
 img {
-  position: relative;
   width: 70px;
+}
+
+img:nth-child(2n) {
+  top: 30px;
+}
+
+#canvas img {
+  position: relative;
   margin-left: -18px;
   vertical-align: top;
 }
 
-img:nth-child(2n) {
+#canvas img:nth-child(2n) {
   top: 30px;
 }
 
@@ -45,6 +56,20 @@ input {
   width: 100%;
 }
 
+#counts {
+  padding-top: 80px;
+  display: flex;
+}
+
+#counts div {
+  margin-right: 10px;
+}
+
+#counts span {
+  display: block;
+  text-align: center;
+}
+
 </style>
 
 </head>
@@ -56,6 +81,25 @@ input {
 </p>
 
 <div id="canvas"></div>
+
+<div id="counts">
+  <div>
+    <img src="0.png" />
+    <span id="count-0">0</span>
+  </div>
+  <div>
+    <img src="1.png" />
+    <span id="count-1">0</span>
+  </div>
+  <div>
+    <img src="2.png" />
+    <span id="count-2">0</span>
+  </div>
+  <div>
+    <img src="3.png" />
+    <span id="count-3">0</span>
+  </div>
+</div>
 
 <script src="tiler.js"></script>
 </body>
