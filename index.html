@@ -3,6 +3,7 @@
 <html>
 
 <head>
+<meta charset="UTF-8" />
 <style>
 body {
   font-family: sans-serif;
@@ -51,11 +52,6 @@ img:nth-child(2n) {
   transform: rotate(300deg);
 }
 
-input {
-  font-size: 30px;
-  width: 100%;
-}
-
 #counts {
   padding-top: 80px;
   display: flex;
@@ -70,14 +66,42 @@ input {
   text-align: center;
 }
 
+#cost {
+  font-size: 30px;
+}
+
+.inputs {
+  display: flex;
+}
+
+input {
+  flex: 1;
+  font-size: 30px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  margin: 1rem;
+}
+
+#input {
+  flex: 3;
+}
+
+
+input:invalid {
+  border: 1px solid red;
+}
+
 </style>
 
 </head>
 
 <body>
 
-<p>
-  <input type="text" id="input" />
+<p class="inputs">
+  <input type="text" id="input" pattern="^[a-z]+$" />
+  <input type="text" id="seed" value="abcdefghijklmnopqrtuvxyz" />
+  <button id="randomise">Randomise seed</button>
 </p>
 
 <div id="canvas"></div>
@@ -85,19 +109,23 @@ input {
 <div id="counts">
   <div>
     <img src="0.png" />
-    <span id="count-0">0</span>
+    <span id="count-0"></span>
   </div>
   <div>
     <img src="1.png" />
-    <span id="count-1">0</span>
+    <span id="count-1"></span>
   </div>
   <div>
     <img src="2.png" />
-    <span id="count-2">0</span>
+    <span id="count-2"></span>
   </div>
   <div>
     <img src="3.png" />
-    <span id="count-3">0</span>
+    <span id="count-3"></span>
+  </div>
+  <div>
+    <span>Cost: <b id="cost"></b></span>
+    <span>Area: <b id="area"></b></span>
   </div>
 </div>
 
